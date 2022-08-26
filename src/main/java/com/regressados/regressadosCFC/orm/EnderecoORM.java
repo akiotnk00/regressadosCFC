@@ -1,9 +1,14 @@
 package com.regressados.regressadosCFC.orm;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "enderecos")
 public class EnderecoORM {
 
 	// Atributos.
-	private Long codigo;
+	private Integer codigo;
 	private String rua;
 	private Integer numero;
 	private String complemento;
@@ -17,11 +22,11 @@ public class EnderecoORM {
 
 	
 	// Getters e Setters.
-	public Long getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
