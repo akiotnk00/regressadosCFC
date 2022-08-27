@@ -1,5 +1,6 @@
 package com.regressados.regressadosCFC.orm;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
@@ -11,26 +12,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "agendamentos")
-public class AgendamentoORM {
-
+@Table(name = "despesas")
+public class DespesaORM {
 	// Atributos.
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
-	private LocalDate dataAgendamento;
-
+	private BigDecimal valor;
+	private String descricao;
+	private LocalDate dataDespesa;
+	
 	// Relacionamentos.
 	@ManyToOne
-	@JoinColumn(name = "matricula_id", nullable = false)
-	private MatriculaORM matricula;
-
-	@ManyToOne
-	@JoinColumn(name = "instrutor_id", nullable = false)
-	private InstrutorORM instrutor;
-
-	@ManyToOne
-	@JoinColumn(name = "veiculo_id", nullable = false)
+	@JoinColumn(name = "veiculo_id", nullable = true)
 	private VeiculoORM veiculo;
 
 	@ManyToOne
@@ -46,20 +40,28 @@ public class AgendamentoORM {
 		this.codigo = codigo;
 	}
 
-	public LocalDate getDataAgendamento() {
-		return dataAgendamento;
+	public BigDecimal getValor() {
+		return valor;
 	}
 
-	public void setDataAgendamento(LocalDate dataAgendamento) {
-		this.dataAgendamento = dataAgendamento;
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
-	public InstrutorORM getInstrutor() {
-		return instrutor;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setInstrutor(InstrutorORM instrutor) {
-		this.instrutor = instrutor;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public LocalDate getDataDespesa() {
+		return dataDespesa;
+	}
+
+	public void setDataDespesa(LocalDate dataDespesa) {
+		this.dataDespesa = dataDespesa;
 	}
 
 	public VeiculoORM getVeiculo() {
@@ -70,12 +72,14 @@ public class AgendamentoORM {
 		this.veiculo = veiculo;
 	}
 
-	public MatriculaORM getMatricula() {
-		return matricula;
+	public FuncionarioORM getFuncionario() {
+		return funcionario;
 	}
 
-	public void setMatricula(MatriculaORM matricula) {
-		this.matricula = matricula;
+	public void setFuncionario(FuncionarioORM funcionario) {
+		this.funcionario = funcionario;
 	}
-
+	
+	
+	
 }

@@ -1,6 +1,9 @@
 package com.regressados.regressadosCFC.orm;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -8,7 +11,9 @@ import javax.persistence.Table;
 public class TelefoneORM {
 
 	// Atributos.
-	private long codigo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer codigo;
 	private String numero;
 	private String descricao;
 	
@@ -20,7 +25,7 @@ public class TelefoneORM {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

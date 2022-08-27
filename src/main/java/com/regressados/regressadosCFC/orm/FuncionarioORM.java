@@ -7,4 +7,5 @@ import javax.persistence.Table;
 @Table(name = "funcionarios")
 public class FuncionarioORM extends PessoaORM {
 
+	
 }

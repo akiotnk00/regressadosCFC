@@ -16,10 +16,11 @@ public abstract class PessoaORM {
 	// Atributos.
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	private String cpf;
 	private String nomeCompleto;
 	private LocalDate dataNascimento;
+	private String senhaAcesso;
 
 	// Relacionamentos.
 	@OneToMany(cascade = CascadeType.ALL)
@@ -33,7 +34,7 @@ public abstract class PessoaORM {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -75,6 +76,14 @@ public abstract class PessoaORM {
 
 	public void setTelefones(List<TelefoneORM> telefones) {
 		this.telefones = telefones;
+	}
+
+	public String getSenhaAcesso() {
+		return senhaAcesso;
+	}
+
+	public void setSenhaAcesso(String senhaAcesso) {
+		this.senhaAcesso = senhaAcesso;
 	}
 
 }
