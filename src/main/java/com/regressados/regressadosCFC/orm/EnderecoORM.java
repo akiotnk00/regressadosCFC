@@ -22,8 +22,6 @@ public class EnderecoORM {
 	private String estado;
 	private char tipo;
 
-	// Relacionamentos.
-	private PessoaORM pessoa;
 
 	// Getters e Setters.
 	public Integer getCodigo() {
@@ -90,14 +88,5 @@ public class EnderecoORM {
 		this.tipo = tipo;
 	}
 
-	public PessoaORM getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(PessoaORM pessoa) {
-		this.pessoa = pessoa;
-	}
-
-	//
 
 }

@@ -58,6 +58,8 @@ public class TurmaORM {
 	public void setTeoricas(List<TeoricaORM> teoricas) {
 		this.teoricas = teoricas;
 	}
-	
+
+
+
 	
 }

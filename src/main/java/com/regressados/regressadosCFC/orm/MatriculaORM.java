@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -57,6 +56,22 @@ public class MatriculaORM {
 
 	public void setAluno(AlunoORM aluno) {
 		this.aluno = aluno;
+	}
+
+	public List<AgendamentoORM> getAgendamentos() {
+		return agendamentos;
+	}
+
+	public void setAgendamentos(List<AgendamentoORM> agendamentos) {
+		this.agendamentos = agendamentos;
+	}
+
+	public TurmaORM getTurma() {
+		return turma;
+	}
+
+	public void setTurma(TurmaORM turma) {
+		this.turma = turma;
 	}
 	
 	

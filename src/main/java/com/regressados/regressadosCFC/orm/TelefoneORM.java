@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +19,6 @@ public class TelefoneORM {
 	private String numero;
 	private String descricao;
 	
-	// Relacionamentos.
-	private PessoaORM pessoa;
 
 	// Getters e Setters.
 	public long getCodigo() {
@@ -44,15 +44,5 @@ public class TelefoneORM {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public PessoaORM getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(PessoaORM pessoa) {
-		this.pessoa = pessoa;
-	}
-	
-	//
 	
 }
