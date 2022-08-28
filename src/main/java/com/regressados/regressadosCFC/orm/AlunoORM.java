@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "alunos")
 public class AlunoORM extends PessoaORM {
-	
+	// Teste Akio
 	// Relacionamentos.
 	@OneToMany(mappedBy = "aluno")
 	private List<MatriculaORM> matriculas;
