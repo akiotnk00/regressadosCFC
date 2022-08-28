@@ -22,6 +22,7 @@ public class FuncionarioORM extends PessoaORM {
 	public void setUnidade(UnidadeORM unidade) {
 		this.unidade = unidade;
 	}
+
 	
 	
 
