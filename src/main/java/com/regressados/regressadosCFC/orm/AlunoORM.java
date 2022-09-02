@@ -13,34 +13,20 @@ import javax.persistence.Table;
 @Table(name = "alunos")
 public class AlunoORM extends PessoaORM {
 	
-	// Relacionamentos.
+	// Atributos.
 	private String rg;
 	private LocalDate dataExpedicao;
+	private String numeroRenach;
 	
+	// Relacionamentos.
 	@OneToMany(mappedBy = "aluno")
 	private List<MatriculaORM> matriculas;
 
 	@ManyToOne
 	@JoinColumn(name = "unidade_id", nullable = false)
 	private UnidadeORM unidade;
-	
+
 	// Getters e Setters.
-	public List<MatriculaORM> getMatriculas() {
-		return matriculas;
-	}
-
-	public void setMatriculas(List<MatriculaORM> matriculas) {
-		this.matriculas = matriculas;
-	}
-
-	public UnidadeORM getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(UnidadeORM unidade) {
-		this.unidade = unidade;
-	}
-
 	public String getRg() {
 		return rg;
 	}
@@ -56,7 +42,30 @@ public class AlunoORM extends PessoaORM {
 	public void setDataExpedicao(LocalDate dataExpedicao) {
 		this.dataExpedicao = dataExpedicao;
 	}
-	
+
+	public String getNumeroRenach() {
+		return numeroRenach;
+	}
+
+	public void setNumeroRenach(String numeroRenach) {
+		this.numeroRenach = numeroRenach;
+	}
+
+	public List<MatriculaORM> getMatriculas() {
+		return matriculas;
+	}
+
+	public void setMatriculas(List<MatriculaORM> matriculas) {
+		this.matriculas = matriculas;
+	}
+
+	public UnidadeORM getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(UnidadeORM unidade) {
+		this.unidade = unidade;
+	}
 	
 	
 }

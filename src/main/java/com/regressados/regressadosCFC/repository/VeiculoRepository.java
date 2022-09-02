@@ -11,4 +11,5 @@ public interface VeiculoRepository extends JpaRepository<VeiculoORM, Integer> {
 	@Query("SELECT v FROM VeiculoORM v")
 	Page<VeiculoORM> findVeiculosORM(Pageable pageable);
 	
+	
 }

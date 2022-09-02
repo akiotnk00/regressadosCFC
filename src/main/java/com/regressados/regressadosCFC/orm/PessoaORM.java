@@ -21,6 +21,7 @@ public abstract class PessoaORM {
 	private String nomeCompleto;
 	private LocalDate dataNascimento;
 	private String senhaAcesso;
+	private String email;
 
 	// Relacionamentos.
 	@OneToMany(cascade = CascadeType.ALL)
@@ -86,4 +87,13 @@ public abstract class PessoaORM {
 		this.senhaAcesso = senhaAcesso;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
 }

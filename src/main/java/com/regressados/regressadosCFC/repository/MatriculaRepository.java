@@ -6,4 +6,5 @@ import com.regressados.regressadosCFC.orm.MatriculaORM;
 
 public interface MatriculaRepository extends CrudRepository<MatriculaORM, Integer> {
 
+
 }
